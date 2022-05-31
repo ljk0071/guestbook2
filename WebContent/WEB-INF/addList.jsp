@@ -2,8 +2,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.javaex.guestdao.GuestDao" %>
-<%@ page import="com.javaex.guestVo.GuestVo" %>
+<%@ page import="com.javaex.dao.GuestDao" %>
+<%@ page import="com.javaex.vo.GuestVo" %>
 <%
 	Date today = new Date();
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");

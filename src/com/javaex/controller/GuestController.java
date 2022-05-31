@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.javaex.guestVo.GuestVo;
-import com.javaex.guestdao.GuestDao;
+import com.javaex.dao.GuestDao;
 import com.javaex.util.WebUtil;
+import com.javaex.vo.GuestVo;
 
 /**
  * Servlet implementation class GuestController

@@ -1,4 +1,4 @@
-package com.javaex.guestdao;
+package com.javaex.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javaex.guestVo.GuestVo;
+import com.javaex.vo.GuestVo;
 
 public class GuestDao {
 		
