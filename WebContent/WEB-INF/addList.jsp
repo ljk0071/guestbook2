@@ -17,7 +17,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="./gc" method="get">
+	<form action="./gc" method="post">
 		<table border=1>
 			<tr>
 				<td>이름 <input type="text" name="name" value=""></td>

@@ -35,8 +35,9 @@ public class GuestController extends HttpServlet {
 
 		} else if (action.equals("write")) {
 			String name = request.getParameter("name");
-			String password = request.getParameter("password");
+			String password = request.getParameter("pw");
 			String content = request.getParameter("content");
+			content=content.replace("\r\n","<br>");
 			String regDate = request.getParameter("regDate");
 
 			GuestVo guestVo = new GuestVo(name, password, content, regDate);
@@ -50,7 +51,9 @@ public class GuestController extends HttpServlet {
 			if( pw.equals(guestDao.Select(no).password)) {
 				guestDao.Delete(no);
 			}
+			
 			WebUtil.redirect(request, response, "/guestbook2/gc?action=addList");
+			
 
 		} else if (action.equals("deleteform")) {
 			WebUtil.forward(request, response, "WEB-INF/deleteForm.jsp");

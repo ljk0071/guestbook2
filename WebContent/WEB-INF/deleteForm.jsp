@@ -20,7 +20,7 @@
 		<input type="hidden" name="no" value="<%=no%>">
 		<input type="hidden" name="action" value="delete">
 		<br>
-		<a href="./gc">메인으로 돌아가기</a>
+		<a href="./gc?action=addList">메인으로 돌아가기</a>
 	</form>
 </body>
 </html>
