@@ -25,8 +25,8 @@ public class GuestController extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 
-		GuestDao GuestDao = new GuestDao();
-		List<GuestVo> guestList = GuestDao.SelectAll();
+		GuestDao guestDao = new GuestDao();
+		List<GuestVo> guestList = guestDao.SelectAll();
 
 		String action = request.getParameter("action");
 		if (action.equals("addList")) {
@@ -39,14 +39,17 @@ public class GuestController extends HttpServlet {
 			String content = request.getParameter("content");
 			String regDate = request.getParameter("regDate");
 
-			GuestVo GuestVo = new GuestVo(name, password, content, regDate);
-			GuestDao.Insert(GuestVo);
+			GuestVo guestVo = new GuestVo(name, password, content, regDate);
+			guestDao.Insert(guestVo);
 
 			WebUtil.redirect(request, response, "/guestbook2/gc?action=addList");
 
 		} else if (action.equals("delete")) {
-			String no = request.getParameter("no");
-			GuestDao.Delete(Integer.parseInt(no));
+			int no = Integer.parseInt(request.getParameter("no"));
+			String pw = request.getParameter("pw");
+			if( pw.equals(guestDao.Select(no).password)) {
+				guestDao.Delete(no);
+			}
 			WebUtil.redirect(request, response, "/guestbook2/gc?action=addList");
 
 		} else if (action.equals("deleteform")) {
